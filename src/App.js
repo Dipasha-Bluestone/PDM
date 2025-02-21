@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import Register from "C:/Users/sw3/source/repos/PDM/client/src/components/Register";
+import Login from "C:/Users/sw3/source/repos/PDM/client/src/components/Login";
+import Design from "C:/Users/sw3/source/repos/PDM/client/src/components/Design";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const isAuthenticated = !!localStorage.getItem("token");
+
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={isAuthenticated ? <Navigate to="/designs" /> : <Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/designs" element={isAuthenticated ? <Design /> : <Navigate to="/login" />} />
+            </Routes>
+        </Router>
+    );
+};
 
 export default App;
+
+ 

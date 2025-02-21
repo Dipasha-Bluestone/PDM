@@ -36,3 +36,55 @@
     transform: rotate(360deg);
   }
 }
+
+.design-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+    .design-table th, .design-table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+    }
+
+    .design-table th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+
+    .design-table img {
+        width: 80px;
+        height: auto;
+        border-radius: 5px;
+    }
+
+.btn-edit {
+    background: #4caf50;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.btn-delete {
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.modal-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
